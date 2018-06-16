@@ -15,6 +15,8 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.slf4j.Logger;
@@ -24,6 +26,8 @@ import cn.sunxyz.common.excel.annotation.ExcelAttribute;
 import cn.sunxyz.common.excel.annotation.ExcelElement;
 import cn.sunxyz.common.excel.annotation.ExcelID;
 import cn.sunxyz.common.excel.config.ElementTypePath;
+
+import static cn.sunxyz.common.excel.core.ExcelTool.getCellValue;
 
 /**
  * 
@@ -608,6 +612,17 @@ public class ExcelUtils<T> extends AbstractExcelUtilss<T>{
 //						logger.debug(key);
 						String value = ExcelTool.getMergedRegionValue(sheet, i, col);
 //						logger.debug(key+" ===>"+value);  
+						tuples.put(key, value);
+					}else {
+						String key = i+","+col;
+//						logger.debug(key);
+						//String value = ExcelTool.getMergedRegionValue(sheet, i, col);
+						Row fRow = sheet.getRow(i);
+						Cell fCell = fRow.getCell(col);
+
+						String value = getCellValue(fCell);
+
+//						logger.debug(key+" ===>"+value);
 						tuples.put(key, value);
 					}
 				}
