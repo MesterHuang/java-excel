@@ -6,10 +6,8 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
 
 /**
- * 
-* 获取合并单元格工具
-* @date 2016年8月6日 下午2:07:47
-*
+ * 获取合并单元格工具
+ * @date 2016年8月6日 下午2:07:47
  */
 @Deprecated
 public class ExcelMergedRegion {

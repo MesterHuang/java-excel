@@ -1,12 +1,10 @@
 package cn.sunxyz.common.excel.config;
 
 /**
- * 
-* 包赚类元素
-* @author
-* @date
-*
- */
+  * 包赚类元素
+  * @author
+  * @date
+  */
 public enum ElementTypePath {
 	
 	SET("java.util.Set"),MAP("java.util.Map"),LIST("java.util.List");
@@ -17,13 +15,12 @@ public enum ElementTypePath {
 		this.path = path;
 	}
 	
-	/**
-	 * 
+  /**
 	* 获取元素
 	* @param path
-	* @return  ElementTypePath 返回类型  
+	* @return  ElementTypePath 返回类型
 	* @throws
-	 */
+	*/
 	public static ElementTypePath getElementTypePath(String path){
 		for(ElementTypePath elementTypePath:ElementTypePath.values()){
 			if(elementTypePath.path.equals(path)){

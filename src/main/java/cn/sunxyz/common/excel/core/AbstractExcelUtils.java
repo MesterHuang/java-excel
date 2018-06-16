@@ -15,23 +15,18 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
- *
  * 常用 抽象方法实现
- *
  * @author
  * @date
  * @param <T>
  */
 public abstract class AbstractExcelUtils<T> extends AbstractExcelUtil<T> {
 
-
 	@Override
 	public List<T> importExcel(String sheetName, String input) {
 		List<T> list = null;
         try {
-
 			boolean isExcel2003 = input.toLowerCase().endsWith("xls")?true:false;
-			//boolean isExcel2003 = input.markSupported()?true:false;
 
 			Workbook workbook = null;
 			if(isExcel2003){
@@ -39,7 +34,6 @@ public abstract class AbstractExcelUtils<T> extends AbstractExcelUtil<T> {
 			}else{
 				workbook = new XSSFWorkbook(new FileInputStream(input));
 			}
-
 
 			//HSSFWorkbook workbook = new HSSFWorkbook(input);
 			Sheet sheet = workbook.getSheet(sheetName);

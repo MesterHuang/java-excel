@@ -7,13 +7,11 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Sheet;
 
 /**
- * 
-* 定义需要重写的细节
-* @author 神盾局
-* @date 2016年8月9日 下午3:26:55
-* 
-* @param <T>
- */
+  * 定义需要重写的细节
+  * @author
+  * @date
+  * @param <T>
+  */
 public abstract class AbstractExcelUtil<T> implements IExcelUtil<T>{
 	
 	public abstract void createHeader(HSSFWorkbook wb, HSSFSheet sheet);

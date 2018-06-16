@@ -1,5 +1,6 @@
 package cn.sunxyz.common.excel.core;
 
+import lombok.Data;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -10,12 +11,11 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
 
 /**
- * 
-* excel 常用功能
-* @author
-* @date
-*
+  * excel 常用功能
+  * @author
+  * @date
  */
+@Data
 public class ExcelTool {
 	
 	//当前行数
@@ -158,7 +158,7 @@ public class ExcelTool {
 		return "";
 	}
 
-	public static int getNum() {
+	/*public static int getNum() {
 		return num;
 	}
 
@@ -189,7 +189,7 @@ public class ExcelTool {
 	public static void setRow(HSSFRow row) {
 		ExcelTool.row = row;
 	}
-
+*/
 	
 	
 }

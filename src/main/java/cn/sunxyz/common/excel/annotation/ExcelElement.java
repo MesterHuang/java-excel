@@ -7,11 +7,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 
-* 用于集合类与对象
-* @author 神盾局
-* @date 2016年8月5日 上午9:45:16
-*
+ * 用于集合类与对象
+ * @author 神盾局
+ * @date 2016年8月5日 上午9:45:16
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
@@ -19,10 +17,9 @@ import java.lang.annotation.Target;
 public @interface ExcelElement {
 
 	/**
-	 * 
-	* 默认属性
-	* @return  String 返回类型  
-	* @throws
+	 * 默认属性
+	 * @return  String 返回类型
+	 * @throws
 	 */
 	String value() default "";
 }

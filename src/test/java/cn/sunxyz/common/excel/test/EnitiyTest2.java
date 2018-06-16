@@ -3,12 +3,8 @@ package cn.sunxyz.common.excel.test;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.util.*;
 
 import cn.sunxyz.common.excel.entity.*;
 import org.junit.Test;
@@ -95,12 +91,12 @@ public class EnitiyTest2 {
         PayCostDetail payCostDetail = new PayCostDetail();
         payCostDetail.setId(1);
         payCostDetail.setContent("書本費");
-        payCostDetail.setAmount("200");
+        payCostDetail.setAmount(new BigDecimal("200"));
 
         PayCostDetail payCostDetail1 = new PayCostDetail();
         payCostDetail1.setId(2);
         payCostDetail1.setContent("生活費");
-        payCostDetail1.setAmount("200");
+        payCostDetail1.setAmount(new BigDecimal("200"));
 
         payCostDetailList.add(payCostDetail);
         payCostDetailList.add(payCostDetail1);
@@ -124,7 +120,7 @@ public class EnitiyTest2 {
         PayCost payCost = new PayCost();
         payCost.setId(1);
         payCost.setType("教育");
-        payCost.setAmount("2000");
+        payCost.setAmount(new BigDecimal("800"));
         payCost.setName("2018年學費");
         payCost.setEndTime("2018-06-10");
         payCost.setStudentCode("007");
@@ -136,7 +132,7 @@ public class EnitiyTest2 {
 		PayCost payCost1 = new PayCost();
 		payCost1.setId(2);
 		payCost1.setType("教育");
-		payCost1.setAmount("2000");
+		payCost1.setAmount(new BigDecimal("800"));
 		payCost1.setName("2018年學費");
 		payCost1.setEndTime("2018-06-10");
 		payCost1.setStudentCode("007");

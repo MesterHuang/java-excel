@@ -7,11 +7,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 
  * 用于普通类型字段
- * @author 神盾局
- * @date 2016年8月5日 上午9:46:04
- *
+ * @author
+ * @date
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

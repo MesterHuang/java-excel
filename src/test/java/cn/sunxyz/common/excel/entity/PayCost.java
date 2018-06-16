@@ -5,8 +5,9 @@ import cn.sunxyz.common.excel.annotation.ExcelElement;
 import cn.sunxyz.common.excel.annotation.ExcelID;
 import lombok.Data;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @Author: HuangC
@@ -27,7 +28,7 @@ public class PayCost {
     private String name;
 
     @ExcelAttribute(name="缴费金额",column="D")
-    private String amount;
+    private BigDecimal amount;
 
     @ExcelAttribute(name="到期时间",column="E")
     private String endTime;

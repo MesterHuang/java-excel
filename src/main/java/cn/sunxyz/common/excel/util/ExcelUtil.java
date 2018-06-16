@@ -33,11 +33,11 @@ import cn.sunxyz.common.excel.annotation.ExcelID;
 import cn.sunxyz.common.excel.config.ElementTypePath;
 
 /**
-* excel 导入出工具
-* @author
-* @date
-* @version 1.2
-* @param <T>
+ * excel 导入出工具
+ * @author
+ * @date
+ * @version 1.2
+ * @param <T>
  */
 @Deprecated
 public class ExcelUtil<T> {
@@ -736,7 +736,6 @@ public class ExcelUtil<T> {
 		return listField;
 	}
 	
- 
 	/**
 	* 得到泛型类对象
 	* @param type
@@ -779,8 +778,7 @@ public class ExcelUtil<T> {
     
     /** 
      * 将EXCEL中A,B,C,D,E列映射成0,1,2,3 
-     *  
-     * @param col 
+     * @param col
      */  
     public static int getExcelCol(String col) {  
         col = col.toUpperCase();

@@ -1,6 +1,7 @@
 package cn.sunxyz.common.excel.core;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -296,7 +297,6 @@ public class ExcelUtils<T> extends AbstractExcelUtilss<T>{
 	}
 	
 	/**
-	 * 
 	* 统计子节点的叶子数目
 	* @Description: TODO(一个类只支持包含一个集合) 
 	* @param t
@@ -427,7 +427,13 @@ public class ExcelUtils<T> extends AbstractExcelUtilss<T>{
 					if (String.class == fieldType) {
 						field.set(entity, String.valueOf(value));
 					} else if ((Integer.TYPE == fieldType) || (Integer.class == fieldType)) {
-						field.set(entity, Integer.parseInt(value));
+						if (value.contains(".")){
+							//poi会将excel中的数值转换后,在后面加上.0(1.0)，这里将String转换成double再转成int(将(1.0)转成(1))
+							field.set(entity, (int)Math.ceil(Double.valueOf(value)));
+						}else{
+							field.set(entity, Integer.parseInt(value));
+						}
+
 					} else if ((Long.TYPE == fieldType) || (Long.class == fieldType)) {
 						field.set(entity, Long.valueOf(value));
 					} else if ((Float.TYPE == fieldType) || (Float.class == fieldType)) {
@@ -440,6 +446,8 @@ public class ExcelUtils<T> extends AbstractExcelUtilss<T>{
 						if ((value != null) && (value.length() > 0)) {
 							field.set(entity, Character.valueOf(value.charAt(0)));
 						}
+					} else if (BigDecimal.class ==fieldType){
+						field.set(entity, new BigDecimal(value));
 					}
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block

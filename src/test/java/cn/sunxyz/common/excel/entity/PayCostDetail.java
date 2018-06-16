@@ -4,6 +4,8 @@ import cn.sunxyz.common.excel.annotation.ExcelAttribute;
 import cn.sunxyz.common.excel.annotation.ExcelID;
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 
 /**
  * @Author: HuangC
@@ -21,5 +23,5 @@ public class PayCostDetail {
     private String content;
 
     @ExcelAttribute(name="金额",column="N")
-    private String amount;
+    private BigDecimal amount;
 }
