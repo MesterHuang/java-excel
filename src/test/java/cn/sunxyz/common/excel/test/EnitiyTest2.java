@@ -1,6 +1,5 @@
 package cn.sunxyz.common.excel.test;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.math.BigDecimal;
@@ -122,7 +121,7 @@ public class EnitiyTest2 {
         payCost.setType("教育");
         payCost.setAmount(new BigDecimal("800"));
         payCost.setName("2018年學費");
-        payCost.setEndTime("2018-06-10");
+        payCost.setEndTime(new Date());
         payCost.setStudentCode("007");
         payCost.setStudentName("陈小伟");
         payCost.setSchoolName("香港朝阳小学");
@@ -134,7 +133,7 @@ public class EnitiyTest2 {
 		payCost1.setType("教育");
 		payCost1.setAmount(new BigDecimal("800"));
 		payCost1.setName("2018年學費");
-		payCost1.setEndTime("2018-06-10");
+		payCost1.setEndTime(new Date());
 		payCost1.setStudentCode("007");
 		payCost1.setStudentName("陈小伟");
 		payCost1.setSchoolName("香港朝阳小学");

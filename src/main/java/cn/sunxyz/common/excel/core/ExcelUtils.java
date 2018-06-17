@@ -2,12 +2,9 @@ package cn.sunxyz.common.excel.core;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -446,8 +443,18 @@ public class ExcelUtils<T> extends AbstractExcelUtilss<T>{
 						if ((value != null) && (value.length() > 0)) {
 							field.set(entity, Character.valueOf(value.charAt(0)));
 						}
-					} else if (BigDecimal.class ==fieldType){
+					} else if (BigDecimal.class == fieldType){
 						field.set(entity, new BigDecimal(value));
+					} else if (Date.class == fieldType){
+						//转换时间格式(将String转成Date)
+						SimpleDateFormat formatter = new SimpleDateFormat( "yyyy-MM-dd");
+						try {
+							Date date = formatter.parse(value);
+							field.set(entity,date);
+						} catch (ParseException e) {
+							e.printStackTrace();
+						}
+
 					}
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block

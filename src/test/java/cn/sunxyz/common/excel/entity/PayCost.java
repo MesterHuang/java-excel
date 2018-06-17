@@ -31,7 +31,7 @@ public class PayCost {
     private BigDecimal amount;
 
     @ExcelAttribute(name="到期时间",column="E")
-    private String endTime;
+    private Date endTime;
 
     @ExcelAttribute(name="学号",column="F")
     private String studentCode;
