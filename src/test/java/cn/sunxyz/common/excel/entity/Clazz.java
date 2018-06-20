@@ -6,9 +6,10 @@ import java.util.Set;
 import cn.sunxyz.common.excel.annotation.ExcelAttribute;
 import cn.sunxyz.common.excel.annotation.ExcelElement;
 import cn.sunxyz.common.excel.annotation.ExcelID;
+import lombok.Data;
 
 
-
+@Data
 public class Clazz{
    
 	@ExcelID
@@ -21,29 +22,4 @@ public class Clazz{
 	@ExcelElement
 	private Set<Student> students = new HashSet<>();
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Set<Student> getStudents() {
-		return students;
-	}
-
-	public void setStudents(Set<Student> students) {
-		this.students = students;
-	}
-	
-	
 }

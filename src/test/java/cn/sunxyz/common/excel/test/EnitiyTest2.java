@@ -24,7 +24,7 @@ public class EnitiyTest2 {
 	public void exportExcel(){
 		
 
-		Set<Student> students = new HashSet<>();
+		/*Set<Student> students = new HashSet<>();
 		Student student = new Student();
 		student.setId("121");
 		student.setAge(8);
@@ -39,7 +39,7 @@ public class EnitiyTest2 {
 		student2.setAge(9);
 		student2.setName("小李");
 		student2.setMap(sMap);
-		students.add(student2);
+		students.add(student2);*/
 		
 		
 		Set<Clazz> clazzs = new HashSet<>();
@@ -47,13 +47,13 @@ public class EnitiyTest2 {
 		Clazz clazz = new Clazz();
 		clazz.setId("11");
 		clazz.setName("一年级");
-		clazz.setStudents(students);
+		//clazz.setStudents(students);
 		clazzs.add(clazz);
 		
 		Clazz clazz2 = new Clazz();
 		clazz2.setId("12");
 		clazz2.setName("二年级");
-		clazz2.setStudents(students);
+		//clazz2.setStudents(students);
 		clazzs.add(clazz2);
 		
 		Clazz clazz3 = new Clazz();
@@ -64,7 +64,7 @@ public class EnitiyTest2 {
 		Clazz clazz4 = new Clazz();
 		clazz4.setId("14");
 		clazz4.setName("四年级");
-		clazz4.setStudents(students);
+		//clazz4.setStudents(students);
 		clazzs.add(clazz4);
 		
 		List<School> list = new ArrayList<>();
@@ -166,9 +166,7 @@ public class EnitiyTest2 {
 	
 	@Test
 	public void importExcel(){
-		//FileInputStream fis = null;
-        //try {
-            //fis = new FileInputStream("e:\\success4.xls");
+
 		/*IExcelUtil<School> util = new ExcelUtils<>();//创建excel工具类
 		List<School> list = util.build(School.class).importExcel("学校信息", "e:\\success4.xls");// 导入
 		list.forEach(data->{
@@ -181,24 +179,26 @@ public class EnitiyTest2 {
 			});
 		});*/
 
-			//fis = new FileInputStream("e:\\success5.xls");
-			IExcelUtil<PayCost> util = new ExcelUtils<>();//创建excel工具类
-            List<PayCost> list = util.build(PayCost.class).importExcel("学校信息", "e:\\success5.xls");// 导入
+		IExcelUtil<PayCost> util = new ExcelUtils<>();//创建excel工具类
+		List<PayCost> list = util.build(PayCost.class).importExcel("学校信息", "e:\\success5.xls");// 导入
 
-			list.forEach(data->{
-				System.out.println("缴费单：---->"+data);
-				data.getPayCostItems().forEach(data1->{
-					System.out.println("缴费项：---->"+data1);
-					data1.getPayCostDetails().forEach(data2->{
-						System.out.println("明细：----->"+data2);
-					});
-				});
+		list.forEach(data->{
+			System.out.println("缴费单：---->"+data);
+			data.getPayCostItems().forEach(data1->{
+				System.out.println("缴费项：---->"+data1);
+				data1.getPayCostDetails().forEach(data2-> System.out.println("明细：----->"+data2));
 			});
+		});
 
-            logger.info(JSON.toJSONString(list));
-        //} catch (FileNotFoundException e) {
-         //   e.printStackTrace();
-       // }
+
+		/*IExcelUtil<Student> util = new ExcelUtils<>();//创建excel工具类
+		List<Student> list = util.build(Student.class).importExcel("学生信息", "e:\\success5.xls");// 导入
+
+		list.forEach(data-> System.out.println("学生：---->"+data));*/
+
+
+		logger.info(JSON.toJSONString(list));
+
 	}
 	@Test
 	public void test(){

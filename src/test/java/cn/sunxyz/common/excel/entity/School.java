@@ -26,37 +26,4 @@ public class School {
 	@ExcelAttribute(name="学校描述",column="C")
 	private Map<String,String> map = new HashMap<>();
 
-	/*public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Set<Clazz> getClazzs() {
-		return clazzs;
-	}
-
-	public void setClazzs(Set<Clazz> clazzs) {
-		this.clazzs = clazzs;
-	}
-
-	public Map<String, String> getMap() {
-		return map;
-	}
-
-	public void setMap(Map<String, String> map) {
-		this.map = map;
-	}
-	*/
-
 }
